@@ -1,0 +1,13 @@
+<?php
+
+almacenarProductos(){
+
+
+}
+
+actualizarProductos(){
+    
+}
+
+
+?>
