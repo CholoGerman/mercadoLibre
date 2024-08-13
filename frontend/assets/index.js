@@ -24,7 +24,7 @@ function Mostrar(productos) {
       <td>${producto.permalink}</td>
       <td>${producto.thumbnail}</td>
       <td>${producto.price}</td>
-      <td><input type="submit" value="Guardar en MySql"></td>
+      <td><input type="submit" value="Guardar en MySql" ></td>
     </tr>
    
  `;
@@ -41,3 +41,12 @@ async function obtenerProductos() {
 
 
 }
+
+
+function guardarProducto(producto){
+
+
+
+
+}
+

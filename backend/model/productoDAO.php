@@ -1,10 +1,10 @@
 <?php
 
-almacenarProductos(){
+function almacenarProductos(){
     
 }
 
-actualizarProductos(){
+function actualizarProductos(){
     
 }
 
