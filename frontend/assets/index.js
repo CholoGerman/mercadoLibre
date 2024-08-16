@@ -3,7 +3,7 @@ window.onload = async () => {
     let productos = await obtenerProductos();
     console.log(productos);
     Mostrar(productos);
-
+ 
 }
 
 
@@ -25,12 +25,12 @@ function Mostrar(productos) {
             guardarProducto(producto)
 
         }
-        trELement.appendChild(buttonElement); 
+        trELement.appendChild(buttonElement);
         buttonElement.innerHTML = 'Guardar';
 
         tbodyElement.appendChild(trELement);
     }
-    )
+)
 }
 
 async function obtenerProductos() {
@@ -42,7 +42,7 @@ async function obtenerProductos() {
 }
 
 
-function guardarProducto(producto) {
+async function guardarProducto(producto) {
     console.log(producto);
     let formData = new FormData();
     formData.append("id", producto.id);
@@ -50,8 +50,16 @@ function guardarProducto(producto) {
     formData.append("permalink", producto.permalink);
     formData.append("thumbnail", producto.thumbnail);
     formData.append("price", producto.price);
-   
-    
 
-  }
+    let config = {
+        method: 'POST',
+        body: formData,
+    }
+    let url = '../../backend/controller/productoController.php';
+
+    let respuesta = await fetch(url, config);
+    let datos = await respuesta.json();
+    console.log(datos);
+}
+
 
